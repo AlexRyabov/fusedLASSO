@@ -1,6 +1,6 @@
 # fusedLASSO
 
-This is a simple fused lasso regression to fit a linear combination of features
+This is a simple MATLAB package for fused lasso regression to fit a linear combination of features
 
   Y^j = \sum_i \theta_i X_i^j
   
@@ -8,7 +8,7 @@ This is a simple fused lasso regression to fit a linear combination of features
   
   J = mean((Y- X*thetas').^2)/2 + lambda * sum(abs(thetas(2:end)))  + tau * sum(abs(diff(thetas(2:end))).^2.*groups);
 
-
+Note that minimization is done with fminunc function, so the code might be slow with a large number of features. 
 
 
 Use this for performing a simple fused lasso regression and get training and test error.  The test data Xtest, Ytest are optional paramters 
